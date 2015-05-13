@@ -4,8 +4,8 @@ NO-IP DNS service updater
 https://www.noip.com/[noip.com] is a free(mium) website that offers to update
 a IP against a domain name. This is a convenient way to update the IP of a host
 that keeps changing and use a fixed human-friendly domain name to refer the
-host. There HTTP API interface to update the IP against a hostname. This script
-uses that to update its host's ip.
+host. There is a HTTP API interface to update the IP against a hostname. This
+script uses that to update its host's ip.
 
 Setting it up
 -------------
@@ -31,7 +31,7 @@ Invoke the script once interactively
 noip_update.py -a -s
 ----
 
-This will prompt for your noip.com site password and will save that in the \~/.noippassword
+This will prompt for your noip.com site password and will save that in the ~/.noippassword
 file(or to a different one if you updated the script as mentioned above)
 
 You should see the script's output on stdout. Some sample outputs are:
@@ -55,7 +55,7 @@ disk, you can add the script to your crontab so that it updates periodically)
 ----
 crontab -e
 */5 * * * * /absolute/path/to/noip_update.py > /tmp/noip_log
------
+----
 
 That's it. Enjoy using your domainname.
 
