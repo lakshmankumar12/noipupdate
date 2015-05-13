@@ -1,13 +1,11 @@
 NO-IP DNS service updater
 ==========================
 
-[noip.com]https://www.noip.com/ is a free\[mium\] website that offers to update
+https://www.noip.com/[noip.com] is a free(mium) website that offers to update
 a IP against a domain name. This is a convenient way to update the IP of a host
 that keeps changing and use a fixed human-friendly domain name to refer the
-host. 
-
-noip.com offers to update the IP via a HTTP API interface. This script uses that
-to update a host's ip.
+host. There HTTP API interface to update the IP against a hostname. This script
+uses that to update its host's ip.
 
 Setting it up
 -------------
@@ -60,3 +58,8 @@ crontab -e
 -----
 
 That's it. Enjoy using your domainname.
+
+Issues?
+-------
+
+Ouch. Sorry. Please get back to me and I will be glad to assist.
