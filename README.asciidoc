@@ -1,0 +1,62 @@
+NO-IP DNS service updater
+==========================
+
+[noip.com]https://www.noip.com/ is a free\[mium\] website that offers to update
+a IP against a domain name. This is a convenient way to update the IP of a host
+that keeps changing and use a fixed human-friendly domain name to refer the
+host. 
+
+noip.com offers to update the IP via a HTTP API interface. This script uses that
+to update a host's ip.
+
+Setting it up
+-------------
+
+Edit the script
+~~~~~~~~~~~~~~~
+
+You will have to edit the first 4 values in the script to your values of choice:
+
+----
+username='lakshmankumar'
+hostname='lakshmankumar.ddns.net'
+interface_to_update='eth2'
+passwordfile=os.path.join(os.path.expanduser("~"),".noippassword")
+----
+
+Run once interactively
+~~~~~~~~~~~~~~~~~~~~~~
+
+Invoke the script once interactively
+
+----
+noip_update.py -a -s
+----
+
+This will prompt for your noip.com site password and will save that in the \~/.noippassword
+file(or to a different one if you updated the script as mentioned above)
+
+You should see the script's output on stdout. Some sample outputs are:
+
+----
+payload:{'hostname': 'lakshmankumar.ddns.net', 'myip': '135.227.232.203'}
+updated:nochg 135.227.232.203
+----
+
+----
+payload:{'hostname': 'lakshmankumar.ddns.net', 'myip': '135.227.232.203'}
+updated:good 135.227.232.208
+----
+
+Set up a cron
+~~~~~~~~~~~~~
+
+Once you have got the script update noip.com once, (and saved your password in a file on local
+disk, you can add the script to your crontab so that it updates periodically)
+
+----
+crontab -e
+*/5 * * * * /absolute/path/to/noip_update.py > /tmp/noip_log
+-----
+
+That's it. Enjoy using your domainname.
