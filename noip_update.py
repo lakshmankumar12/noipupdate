@@ -5,10 +5,17 @@ import subprocess
 import requests
 import os
 
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from requests.packages.urllib3.exceptions import InsecurePlatformWarning
+from requests.packages.urllib3.exceptions import SNIMissingWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+requests.packages.urllib3.disable_warnings(InsecurePlatformWarning)
+requests.packages.urllib3.disable_warnings(SNIMissingWarning)
+
 # Edit these with your values
 username='lakshmankumar'
-hostname='lakshmankumar.ddns.net'
-interface_to_update='eth2'
+hostname='lkcentosvm.ddns.net'
+interface_to_update='eth0'
 passwordfile=os.path.join(os.path.expanduser("~"),".noippassword")
 
 password=None
