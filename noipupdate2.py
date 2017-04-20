@@ -6,10 +6,17 @@ import requests
 import os
 import re
 
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from requests.packages.urllib3.exceptions import InsecurePlatformWarning
+from requests.packages.urllib3.exceptions import SNIMissingWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+requests.packages.urllib3.disable_warnings(InsecurePlatformWarning)
+requests.packages.urllib3.disable_warnings(SNIMissingWarning)
+
 # Edit these with your values
 username='lakshmankumar'
 hostname='lkwinhost.ddns.net'
-actual_long_host_to_update='usmovdlnara002.eng.timetra.com'
+actual_long_host_to_update='usmovdlnara002n.eng.timetra.com'
 passwordfile=os.path.join(os.path.expanduser("~"),".noippassword")
 
 password=None
